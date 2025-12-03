@@ -94,7 +94,7 @@ img {
   font-weight: var(--normal-font-weight);
 }
 
-.site-list {
+.site__list {
   list-style: none;
   text-align: center;
   display: flex;
@@ -102,24 +102,28 @@ img {
   gap: 1rem;
 }
 
-.site {
+.site__link:link,
+.site__link:visited {
+  background-color: var(--light-grey-color);
+  color: var(--white-color);
   font-size: var(--small-font-size);
   font-weight: var(--bold-font-weight);
-  background-color: var(--light-grey-color);
+  text-decoration: none;
+  display: block;
   padding: 0.75rem;
   border-radius: 0.5rem;
-  transition: all 0.2s;
+  transition: background-color 0.2s;
 }
 
-.site:hover,
-.site:focus {
+.site__link:hover,
+.site__link:focus {
   background-color: var(--highlight-color);
   color: var(--dark-grey-color);
-  cursor: pointer;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .site {
+  .site__link:hover,
+  .site__link:focus {
     transition: none;
   }
 }
