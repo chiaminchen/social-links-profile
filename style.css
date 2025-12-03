@@ -1,0 +1,125 @@
+/* Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* Variables */
+:root {
+  --highlight-color: #c4f82a;
+  --dark-grey-color: #141414;
+  --medium-grey-color: #1f1f1f;
+  --light-grey-color: #333;
+  --white-color: #fff;
+  --normal-font-weight: 400;
+  --medium-font-weight: 600;
+  --bold-font-weight: 700;
+  --large-font-size: 1.5rem;
+  --small-font-size: 0.875rem;
+}
+
+/* Main Styling */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.5;
+  background-color: var(--dark-grey-color);
+  color: var(--white-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+@supports (height: 100svh) {
+  body {
+    height: 100svh;
+  }
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.card {
+  background-color: var(--medium-grey-color);
+  width: clamp(20.4375rem, 17.0382rem + 14.5038vw, 24rem);
+  border-radius: 0.75rem;
+  padding: clamp(1.5rem, 0.5458rem + 4.0712vw, 2.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.avatar {
+  width: 5.5rem;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-inline: auto;
+}
+
+.user {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.user__name {
+  font-size: var(--large-font-size);
+  font-weight: var(--medium-font-weight);
+}
+
+.user__location {
+  color: var(--highlight-color);
+  font-size: var(--small-font-size);
+  font-weight: var(--bold-font-weight);
+}
+
+.description {
+  font-size: var(--small-font-size);
+  font-weight: var(--normal-font-weight);
+}
+
+.site-list {
+  list-style: none;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.site {
+  font-size: var(--small-font-size);
+  font-weight: var(--bold-font-weight);
+  background-color: var(--light-grey-color);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s;
+}
+
+.site:hover,
+.site:focus {
+  background-color: var(--highlight-color);
+  color: var(--dark-grey-color);
+  cursor: pointer;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site {
+    transition: none;
+  }
+}
