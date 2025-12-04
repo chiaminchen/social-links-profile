@@ -3,11 +3,11 @@
 
 /* Variables */
 :root {
-  --highlight-color: #c4f82a;
-  --dark-grey-color: #141414;
-  --medium-grey-color: #1f1f1f;
-  --light-grey-color: #333;
-  --white-color: #fff;
+  --highlight: #c4f82a;
+  --grey-900: #141414;
+  --grey-800: #1f1f1f;
+  --grey-700: #333;
+  --white: #fff;
   --normal-font-weight: 400;
   --medium-font-weight: 600;
   --bold-font-weight: 700;
@@ -34,17 +34,14 @@ li {
 body {
   font-family: 'Inter', sans-serif;
   line-height: 1.5;
-  background-color: var(--dark-grey-color);
-  color: var(--white-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  background-color: var(--grey-900);
+  color: var(--white);
+  min-height: 100vh;
 }
 
-@supports (height: 100svh) {
+@supports (min-height: 100svh) {
   body {
-    height: 100svh;
+    min-height: 100svh;
   }
 }
 
@@ -53,8 +50,21 @@ img {
   display: block;
 }
 
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+@supports (min-height: 100svh) {
+  .main-container {
+    min-height: svh;
+  }
+}
+
 .card {
-  background-color: var(--medium-grey-color);
+  background-color: var(--grey-800);
   width: clamp(20.4375rem, 17.0382rem + 14.5038vw, 24rem);
   border-radius: 0.75rem;
   padding: clamp(1.5rem, 0.5458rem + 4.0712vw, 2.5rem);
@@ -84,7 +94,7 @@ img {
 }
 
 .user__location {
-  color: var(--highlight-color);
+  color: var(--highlight);
   font-size: var(--small-font-size);
   font-weight: var(--bold-font-weight);
 }
@@ -104,8 +114,8 @@ img {
 
 .site__link:link,
 .site__link:visited {
-  background-color: var(--light-grey-color);
-  color: var(--white-color);
+  background-color: var(--grey-700);
+  color: var(--white);
   font-size: var(--small-font-size);
   font-weight: var(--bold-font-weight);
   text-decoration: none;
@@ -117,8 +127,8 @@ img {
 
 .site__link:hover,
 .site__link:focus {
-  background-color: var(--highlight-color);
-  color: var(--dark-grey-color);
+  background-color: var(--highlight);
+  color: var(--grey-900);
 }
 
 @media (prefers-reduced-motion: reduce) {
