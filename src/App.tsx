@@ -35,9 +35,10 @@ function Link({ website, url }: LinksType) {
   return (
     <li>
       <a
-        className="bg-gray-light hover:bg-green p-3 rounded-lg text-sm/normal font-bold  hover:text-gray-medium block transition-all duration-300"
+        className="bg-gray-light hover:bg-green p-3 rounded-lg text-sm/normal font-bold  hover:text-gray-medium block transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-green focus-visible:ring-offset-2"
         href={url}
         target="_blank"
+        rel="noopener noreferrer"
       >
         {website}
       </a>
