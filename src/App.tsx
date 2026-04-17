@@ -1,11 +1,7 @@
 import jessicaImage from './assets/avatar-jessica.jpeg';
+import { SocialLink, type SocialLinkProps } from './components/SocialLink';
 
-interface SocialLinkType {
-  website: string;
-  url: string;
-}
-
-const links: SocialLinkType[] = [
+const links: SocialLinkProps[] = [
   { website: 'GitHub', url: 'https://github.com/' },
   { website: 'Frontend Mentor', url: 'https://www.frontendmentor.io/' },
   { website: 'LinkedIn', url: 'https://www.linkedin.com/' },
@@ -42,21 +38,6 @@ function App() {
         </ul>
       </article>
     </main>
-  );
-}
-
-function SocialLink({ website, url }: SocialLinkType) {
-  return (
-    <li>
-      <a
-        className="bg-gray-light hover:bg-green hover:text-gray-medium focus-visible:ring-green focus-visible:ring-offset-gray-dark block rounded-lg p-3 text-sm/normal font-bold transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
-        href={url}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        {website}
-      </a>
-    </li>
   );
 }
 
