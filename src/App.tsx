@@ -1,11 +1,11 @@
 import jessicaImage from './assets/avatar-jessica.jpeg';
 
-interface LinksType {
+interface SocialLinkType {
   website: string;
   url: string;
 }
 
-const links: LinksType[] = [
+const links: SocialLinkType[] = [
   { website: 'GitHub', url: 'https://github.com/' },
   { website: 'Frontend Mentor', url: 'https://www.frontendmentor.io/' },
   { website: 'LinkedIn', url: 'https://www.linkedin.com/' },
@@ -17,9 +17,9 @@ function App() {
   return (
     <main className="bg-gray-medium w-card-fluid flex flex-col items-center gap-6 rounded-xl p-6 text-center text-white">
       <img
-        className="w-22 rounded-[50%]"
+        className="w-22 rounded-full"
         src={jessicaImage}
-        alt="Jessica Randall's avatar"
+        alt="Jessica Randall"
         width={88}
         height={88}
       />
@@ -32,18 +32,22 @@ function App() {
       <p className="text-sm/normal">"Front-end developer and avid reader."</p>
       <ul className="flex w-full flex-col gap-4">
         {links.map((link) => (
-          <Link key={link.website} website={link.website} url={link.url} />
+          <SocialLink
+            key={link.website}
+            website={link.website}
+            url={link.url}
+          />
         ))}
       </ul>
     </main>
   );
 }
 
-function Link({ website, url }: LinksType) {
+function SocialLink({ website, url }: SocialLinkType) {
   return (
     <li>
       <a
-        className="bg-gray-light hover:bg-green hover:text-gray-medium focus-visible:ring-green block rounded-lg p-3 text-sm/normal font-bold transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+        className="bg-gray-light hover:bg-green hover:text-gray-medium focus-visible:ring-green focus-visible:ring-offset-gray-dark block rounded-lg p-3 text-sm/normal font-bold transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
         href={url}
         target="_blank"
         rel="noopener noreferrer"
